@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="93602c69-1541-440d-bfe5-0b71b95e0684" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database_proj/populate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database_proj/template/testapp/results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_proj/database_proj/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_proj/database_proj/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_proj/database_proj/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_proj/database_proj/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_proj/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/database_proj/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database_proj/firstapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_proj/firstapp/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/postgresProj/postgresProj/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/postgresProj/postgresProj/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,25 +14,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database_proj/firstapp/admin.py">
+        <entry file="file://$PROJECT_DIR$/postgresProj/postgresProj/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="265">
+              <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/database_proj/database_proj/urls.py">
+        <entry file="file://$PROJECT_DIR$/postgresProj/appdjango/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#637#669#0" expanded="true" />
-              </folding>
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -45,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database_proj/firstapp/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="14" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="14" />
+            <state relative-caret-position="225">
+              <caret line="15" column="25" lean-forward="true" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -54,7 +43,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database_proj/database_proj/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
+            <state relative-caret-position="870">
               <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
             </state>
           </provider>
@@ -63,7 +52,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/database_proj/firstapp/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="30">
               <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
@@ -105,8 +94,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testdjango/testapp/views.py" />
-        <option value="$PROJECT_DIR$/testdjango/happynewyear/views.py" />
         <option value="$PROJECT_DIR$/testdjango/testdjango/settings.py" />
         <option value="$PROJECT_DIR$/testdjango/testdjango/urls.py" />
         <option value="$PROJECT_DIR$/secondproject/testapp1/views.py" />
@@ -156,6 +143,8 @@
         <option value="$PROJECT_DIR$/database_proj/database_proj/settings.py" />
         <option value="$PROJECT_DIR$/database_proj/template/testapp/results.html" />
         <option value="$PROJECT_DIR$/database_proj/populate.py" />
+        <option value="$PROJECT_DIR$/postgresProj/postgresProj/settings.py" />
+        <option value="$PROJECT_DIR$/postgresProj/appdjango/models.py" />
       </list>
     </option>
   </component>
@@ -187,7 +176,26 @@
             <path>
               <item name="env" type="b2602c69:ProjectViewProjectNode" />
               <item name="env" type="462c0819:PsiDirectoryNode" />
+              <item name="database_proj" type="462c0819:PsiDirectoryNode" />
+              <item name="firstapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="env" type="b2602c69:ProjectViewProjectNode" />
+              <item name="env" type="462c0819:PsiDirectoryNode" />
               <item name="postgresProj" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="env" type="b2602c69:ProjectViewProjectNode" />
+              <item name="env" type="462c0819:PsiDirectoryNode" />
+              <item name="postgresProj" type="462c0819:PsiDirectoryNode" />
+              <item name="appdjango" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="env" type="b2602c69:ProjectViewProjectNode" />
+              <item name="env" type="462c0819:PsiDirectoryNode" />
+              <item name="postgresProj" type="462c0819:PsiDirectoryNode" />
+              <item name="appdjango" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -362,8 +370,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/bootstrapProj/bootstrapProj/settings.py" />
-    <entry file="file://$PROJECT_DIR$/bootstrapProj/appview/models.py" />
     <entry file="file://$PROJECT_DIR$/bootstrapProj/template/testapp/politicalnews.html" />
     <entry file="file://$PROJECT_DIR$/testdjango/testdjango/settings.py" />
     <entry file="file://$PROJECT_DIR$/databaseProject/connectApp/migrations/__init__.py" />
@@ -424,34 +430,10 @@
     <entry file="file://$PROJECT_DIR$/database_proj/firstapp/migrations/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/database_proj/database_proj/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_proj/firstapp/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database_proj/template/testapp/results.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="18" column="31" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database_proj/firstapp/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="14" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -461,6 +443,23 @@
           <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_proj/database_proj/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="870">
+          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_proj/firstapp/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -482,6 +481,27 @@
           <folding>
             <element signature="e#637#669#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postgresProj/postgresProj/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="87" column="25" selection-start-line="87" selection-start-column="25" selection-end-line="87" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database_proj/firstapp/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="25" lean-forward="true" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/postgresProj/appdjango/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
         </state>
       </provider>
     </entry>
