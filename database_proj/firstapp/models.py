@@ -10,6 +10,8 @@ class Employee(models.Model):
     ename = models.CharField(max_length=40)
     esal = models.FloatField()
     eaddr = models.CharField(max_length=64)
+    # emobno = models.IntegerField()
+    phonnum = models.IntegerField()
 
 
     def __str__(self):

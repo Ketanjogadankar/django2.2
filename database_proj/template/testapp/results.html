@@ -1,10 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'css/empinfo.css'%}">
+
 </head>
+
 <body>
+    <div class ="container">
     <h1>Employees Information</h1><hr>
     {% if employees %}
             <table border="2">
@@ -13,6 +20,7 @@
                     <th>Employee Name</th>
                     <th>Employee Salary</th>
                     <th>Employee Address</th>
+                    <th>Employee Phone</th>
                 </thead>
                 {% for emp in employees %}
                 <tr>
@@ -20,12 +28,14 @@
                     <td>{{emp.ename}}</td>
                     <td>{{emp.esal}}</td>
                     <td>{{emp.eaddr}}</td>
+                    <td>{{emp.phonnum}}</td>
                 </tr>
                 {%endfor%}
             </table>
     {%else%}
     <p>Number of employee found</p>
     {%endif%}
+    </div>
 
 </body>
 </html>
