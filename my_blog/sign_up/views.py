@@ -5,15 +5,18 @@ import traceback
 import sys
 import logging
 from django.contrib import messages
+from .forms import CreateUserForms   #Created mannually
 
 logger = logging.getLogger(__name__)
 
 
 
 def register_page(request):
-        form = UserCreationForm()
+        # form = UserCreationForm() #Importing base django usercreationform
+        form = CreateUserForms()
         if request.method == 'POST':
-            form = UserCreationForm(request.POST)
+            # form = UserCreationForm(request.POST)    #Importing base django usercreationform
+            form = CreateUserForms(request.POST)
 
             if form.is_valid():
                 form.save()
@@ -21,3 +24,11 @@ def register_page(request):
                 # return redirect('register')
         context = {'form':form}
         return render(request,'testapp/registration.html',context)
+
+
+def login_page(request):
+    context = { }
+    return render(request, 'testapp/login.html', context)
+
+
+
