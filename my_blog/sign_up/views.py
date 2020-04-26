@@ -5,6 +5,7 @@ import traceback
 import sys
 import logging
 from django.contrib import messages
+from django.contrib.auth import authenticate, login, logout
 from .forms import CreateUserForms   #Created mannually
 
 logger = logging.getLogger(__name__)
@@ -20,15 +21,32 @@ def register_page(request):
 
             if form.is_valid():
                 form.save()
-                messages.success(request, 'Account created successfully')
-                # return redirect('register')
+                user = form.cleaned_data.get('username')
+                messages.success(request, 'Account created successfully for' + user)
+                return redirect('login')
         context = {'form':form}
         return render(request,'testapp/registration.html',context)
 
 
 def login_page(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        logger.error("Could not read %s", user)
+
+
+        if user is not None:
+            login(request, user)
+            return redirect('home')
+
     context = { }
     return render(request, 'testapp/login.html', context)
+
+def home_page(request):
+    # logger.error("request>>>>>>>>>>>>>", request)
+
+    return  render(request, 'testapp/home.html')
 
 
 

@@ -19,7 +19,8 @@ from django.conf.urls import url
 from sign_up import views
 
 urlpatterns = [
-    url('admin/', admin.site.urls),
+    url('admin/', admin.site.urls, name='admin'),
     url('register/', views.register_page, name='register'),
-    url('login/', views.login_page),
+    url('login/', views.login_page, name='login'),
+    url('', views.home_page, name='home'),
 ]

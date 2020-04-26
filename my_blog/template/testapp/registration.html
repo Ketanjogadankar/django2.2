@@ -3,68 +3,73 @@
 
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="{%static 'css/registration.css'%}">
+	<meta charset="UTF-8">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="{%static 'css/registration.css'%}">
 
-    <title>Registration</title>
+	<title>Registration</title>
 </head>
 <body>
 <h3>Register</h3>
 <form method="POST" action="">
-    {% csrf_token %}
-<!--    {{form.as_p}}-->
-    <div class="col-md-5 " id="login">
-						<section id="inner-wrapper" class="login">
-							<article>
-                                    <table>
+	{% csrf_token %}
+	<!--    {{form.as_p}}-->
+	<div class="col-md-5 " id="login">
+		<section id="inner-wrapper" class="login">
+			<article>
+				<table>
 
 
-									<tr class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-                                                <td>{{form.username.label}}</td>
-                                                <td>{{form.username}}</td>
-										</div>
-									</tr>
+					<tr class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
+							<td>{{form.username.label}}</td>
+							<td>{{form.username}}</td>
+						</div>
+					</tr>
 
 
-									<tr class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-key"> </i></span>
+					<tr class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-key"> </i></span>
 
-                                                <td>{{form.email.label}}</td>
-                                                <td>{{form.email}}</td>
+							<td>{{form.email.label}}</td>
+							<td>{{form.email}}</td>
 
-										</div>
-									</tr>
-									<tr class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-key"> </i></span>
+						</div>
+					</tr>
+					<tr class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-key"> </i></span>
 
-                                                <td>{{form.password1.label}}</td>
-                                                <td>{{form.password1}}</td>
+							<td>{{form.password1.label}}</td>
+							<td>{{form.password1}}</td>
 
-										</div>
-									</tr>
-                                    <tr class="form-group">
-										<div class="input-group">
-											<span class="input-group-addon"><i class="fa fa-key"> </i></span>
-                                                <td>{{form.password2.label}}</td>
-                                                <td>{{form.password2}}</td>
-										</div>
-									</tr>
-                                        </table>
+						</div>
+					</tr>
+					<tr class="form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="fa fa-key"> </i></span>
+							<td>{{form.password2.label}}</td>
+							<td>{{form.password2}}</td>
+						</div>
+					</tr>
+				</table>
 
-									  <button type="submit" class="btn btn-success btn-block">Submit</button>
-							</article>
-						</section></div>
+				{{form.errors}}
+
+				<button type="submit" class="btn btn-success btn-block">Submit</button>
+				<a href="{% url 'login' %}">Login To Your Account</a>
+
+			</article>
+		</section>
+	</div>
 
 
 
-    <input type="submit" value="Submit" name="Create User">
+	<input type="submit" value="Submit" name="Create User">
 
 </form>
 </body>

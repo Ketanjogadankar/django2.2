@@ -23,8 +23,8 @@
 									<tr class="form-group">
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-envelope"> </i></span>
-                                                <td>{{form.username.label}}</td>
-                                                <td>{{form.username}}</td>
+											<input type="text" class="form-control" name="username" placeholder="Name">
+
 										</div>
 									</tr>
 
@@ -33,13 +33,18 @@
 										<div class="input-group">
 											<span class="input-group-addon"><i class="fa fa-key"> </i></span>
 
-                                                <td>{{form.email.label}}</td>
-                                                <td>{{form.email}}</td>
+											<input type="password" name="password" class="form-control" placeholder="Password">
 
 										</div>
 									</tr>
 
                                         </table>
+
+									{% for messages in messages %}
+
+										<p id="messages">{{messages}}</p>
+
+									{% endfor %}
 
 									  <button type="submit" class="btn btn-success btn-block">Submit</button>
 									  <a href="{% url 'register' %}">SignUP</a>
