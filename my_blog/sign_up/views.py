@@ -7,7 +7,11 @@ import logging
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .forms import CreateUserForms   #Created mannually
+from django.http import HttpResponseRedirect
+from .forms import CreateUserForms, HomeForm   #Created mannually
+from .models import Post
+from django.urls import reverse
+
 
 logger = logging.getLogger(__name__)
 
@@ -61,6 +65,31 @@ def home_page(request):
 def logout_user(request):
     logout(request)
     return redirect('login')
+
+
+def post_blog(request):
+    t=0
+    if request.method == 'POST':
+        form = HomeForm(request.POST)
+        if form.is_valid():
+            n = form.cleaned_data["post"]
+            t = Post(post=n)
+            t.save()
+
+        #     logger.error("in post blogs>>>>>>>>>>>>>>>>>> %s", )
+        # return HttpResponseRedirect("/%i", %t.id)
+        # return HttpResponseRedirect(reverse('%i', kwargs={'id': t.id}))
+
+    else:
+        form = HomeForm()
+
+        #     text = form.cleaned_data['POST']
+        #     form = HomeForm()
+    args = {'form': form, 'blogs': t }
+    return  render(request, 'testapp/home.html', args)
+
+
+
 
 
 

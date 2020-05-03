@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import  User
 
 # Create your models here.
 # username:mayur200
@@ -6,17 +7,8 @@ from django.db import models
 # pass:aai123
 
 # Create your models here.
+class Post(models.Model):
+    post = models.CharField(max_length=500)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-# class Order(models.Model):
-	# STATUS = (
-	# 		('Pending', 'Pending'),
-	# 		('Out for delivery', 'Out for delivery'),
-	# 		('Delivered', 'Delivered'),
-	# 		)
-
-	# customer = models.ForeignKey(Customer, null=True, on_delete= models.SET_NULL)
-	# product = models.ForeignKey(Product, null=True, on_delete= models.SET_NULL)
-	# date_created = models.DateTimeField(auto_now_add=True, null=True)
-	# status = models.CharField(max_length=200, null=True, choices=STATUS)
-	# note = models.CharField(max_length=1000, null=True)
 

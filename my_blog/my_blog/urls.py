@@ -23,6 +23,7 @@ urlpatterns = [
     url('register/', views.register_page, name='register'),
     url('login/', views.login_page, name='login'),
     url('logout/', views.logout_user, name='logout'),
-    url('', views.home_page, name='home'),
+    url('home/', views.home_page, name='home'),
+    url('blog/', views.post_blog, name='blog'),
 
 ]

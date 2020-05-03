@@ -8,5 +8,20 @@
 mumbai
 <span>Hello, {{request.user}}</span>
 <span><a href="{% url 'logout' %}">Log Out</a></span>
+<form method="POST" action="/blog/">
+    {% csrf_token %}
+    {{form.as_p}}
+<!--    <input type="text" class="form-control" name="post" placeholder="Name">-->
+    <button type="submit" class="btn btn-success btn-block" name="save">Submit</button>
+
+</form>
+     <h1>ALL Blogs</h1><hr>    <br />
+    {% if blogs %}
+            <b> Blog is:</b>
+                        <p>{{blogs.post}}</p>
+    {%else%}
+    <b>NO blogs found</b>
+    {%endif%}
+
 </body>
 </html>
