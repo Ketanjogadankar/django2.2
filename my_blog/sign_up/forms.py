@@ -15,9 +15,9 @@ class CreateUserForms(UserCreationForm):
         model = User
         fields = ['username','email', 'password1', 'password2']
 
-class HomeForm(forms.Form):
+class HomeForm(forms.ModelForm):
     post = forms.CharField(label='Post')
-    # class Meta:
-    #     model = Post
-    #     fields = ('post',)
+    class Meta:
+        model = Post
+        fields = ('post',)
 

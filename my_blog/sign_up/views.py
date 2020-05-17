@@ -66,27 +66,33 @@ def logout_user(request):
     logout(request)
     return redirect('login')
 
+def get(request):
+    form = HomeForm()
+    return render(request, {'form':form})
+
 
 def post_blog(request):
-    t=0
+    global text, form
+    rating = 'Error 404'
+    context = {'form': rating}
+
+    # t=0
     if request.method == 'POST':
         form = HomeForm(request.POST)
         if form.is_valid():
-            n = form.cleaned_data["post"]
-            t = Post(post=n)
-            t.save()
+            post = form.save(commit=False)
+            post.user = request.user
+            post.save
+            text = form.cleaned_data["post"]
+            form = HomeForm()
+            # return redirect('blog')
+        else:
+            text = 'error'
 
-        #     logger.error("in post blogs>>>>>>>>>>>>>>>>>> %s", )
-        # return HttpResponseRedirect("/%i", %t.id)
-        # return HttpResponseRedirect(reverse('%i', kwargs={'id': t.id}))
-
+        args = {'form':form,'text':text}
+        return  render(request, 'testapp/home.html', args)
     else:
-        form = HomeForm()
-
-        #     text = form.cleaned_data['POST']
-        #     form = HomeForm()
-    args = {'form': form, 'blogs': t }
-    return  render(request, 'testapp/home.html', args)
+        return render(request, 'testapp/home.html', context)
 
 
 
