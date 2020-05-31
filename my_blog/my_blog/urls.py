@@ -18,12 +18,14 @@ from django.urls import path
 from django.conf.urls import url
 from sign_up import views
 
+app_name = 'sign_up'
+
 urlpatterns = [
     url('admin/', admin.site.urls, name='admin'),
     url('register/', views.register_page, name='register'),
     url('login/', views.login_page, name='login'),
     url('logout/', views.logout_user, name='logout'),
-    url('home/', views.home_page, name='home'),
+    # url('home/', views.home_page, name='home'),
     url('blog/', views.post_blog, name='blog'),
 
 ]

@@ -36,7 +36,7 @@ def register_page(request):
 
 def login_page(request):
     if request.user.is_authenticated:    #User could not type user "localhost:/login/" & go to login page once he is logged in already
-        return redirect('home')
+        return redirect('blog')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -47,7 +47,7 @@ def login_page(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('home')
+                return redirect('blog')
             else:
                 messages.info(request, 'Username or Password is incorrect')
 
@@ -56,11 +56,11 @@ def login_page(request):
         return render(request, 'testapp/login.html', context)
 
 
-@login_required(login_url='login')
-def home_page(request):
-    # logger.error("request>>>>>>>>>>>>>", request)
-
-    return  render(request, 'testapp/home.html')
+# @login_required(login_url='login')
+# def home_page(request):
+#     # logger.error("request>>>>>>>>>>>>>", request)
+#
+#     return  render(request, 'testapp/home.html')
 
 def logout_user(request):
     logout(request)
@@ -70,6 +70,8 @@ def get(request):
     form = HomeForm()
     return render(request, {'form':form})
 
+
+# def article_detail()
 
 def post_blog(request):
     global text, form
@@ -82,17 +84,22 @@ def post_blog(request):
         if form.is_valid():
             post = form.save(commit=False)
             post.user = request.user
-            post.save
-            text = form.cleaned_data["post"]
-            form = HomeForm()
-            # return redirect('blog')
-        else:
-            text = 'error'
+            logger.error("anonymous................>>>>>>")
+            post.save()
 
-        args = {'form':form,'text':text}
-        return  render(request, 'testapp/home.html', args)
+            text = form.cleaned_data["post"]
+            # form = HomeForm()
+            return redirect('blog')
+            # post_ref = Post(post=text, author=request.user)
+            # post_ref.save()
+        else:
+            form = {'form':'error'}
+
+
+        # args = {'form':form,'text':text}
+        return  render(request, 'testapp/home.html', form)
     else:
-        return render(request, 'testapp/home.html', context)
+        return render(request, 'testapp/home.html')
 
 
 

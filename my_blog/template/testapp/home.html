@@ -8,20 +8,21 @@
 mumbai
 <span>Hello, {{request.user}}</span>
 <span><a href="{% url 'logout' %}">Log Out</a></span>
-<form method="POST" action="/blog/">
+<form method="POST" action="{% url 'blog' %}" class="site-form">
     {% csrf_token %}
     {{form.as_p}}
 <!--    <input type="text" class="form-control" name="post" placeholder="Name">-->
+<!--    {{ form }}-->
     <button type="submit" class="btn btn-success btn-block" name="save">Submit</button>
 
 </form>
-     <h1>ALL Blogs</h1><hr>    <br />
-    {% if text %}
-            <b> Blog is:</b>
-                        <p>{{text}}</p>
-    {%else%}
-    <b>NO blogs found</b>
-    {%endif%}
+<!--     <h1>ALL Blogs</h1><hr>    <br />-->
+<!--    {% if text %}-->
+<!--            <b> Blog is:</b>-->
+<!--                        <p>{{text}}</p>-->
+<!--    {%else%}-->
+<!--    <b>NO blogs found</b>-->
+<!--    {%endif%}-->
 
 
 <!--    <h2>{{ text.post }}</h2>-->

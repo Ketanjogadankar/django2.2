@@ -104,7 +104,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'sign_up.Post'
+# AUTH_USER_MODEL = 'sign_up.Post'
 
 
 
