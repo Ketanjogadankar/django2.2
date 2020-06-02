@@ -74,7 +74,8 @@ def get(request):
 # def article_detail()
 
 def post_blog(request):
-    global text, form
+    global text
+    form = HomeForm(request.POST)
     rating = 'Error 404'
     context = {'form': rating}
 
@@ -83,7 +84,7 @@ def post_blog(request):
         form = HomeForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
-            post.user = request.user
+            post.author = request.user
             logger.error("anonymous................>>>>>>")
             post.save()
 
@@ -93,13 +94,12 @@ def post_blog(request):
             # post_ref = Post(post=text, author=request.user)
             # post_ref.save()
         else:
-            form = {'form':'error'}
-
+            pass
 
         # args = {'form':form,'text':text}
-        return  render(request, 'testapp/home.html', form)
+        return  render(request, 'testapp/home.html', {'form':form})
     else:
-        return render(request, 'testapp/home.html')
+        return render(request, 'testapp/home.html',{'form':form})
 
 
 

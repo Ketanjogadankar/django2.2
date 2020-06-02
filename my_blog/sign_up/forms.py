@@ -19,5 +19,5 @@ class HomeForm(forms.ModelForm):
     post = forms.CharField(label='Post')
     class Meta:
         model = Post
-        fields = ('post',)
+        fields = ['post']
 
