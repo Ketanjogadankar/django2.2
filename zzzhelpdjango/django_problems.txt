@@ -1,1 +1,9 @@
 https://www.google.com/search?q=Exception+location+/opt/venv/venv/lib/python3.6/site-packages/django/db/backends/sqlite3/base.py+in+execute,+line+396&spell=1&sa=X&ved=2ahUKEwiz5ZjH69vpAhXaxjgGHWpBD-MQBSgAegQIDRAm&biw=1317&bih=637
+
+
+2)Form to admin panel save:
+https://stackoverflow.com/questions/26651688/django-integrity-error-unique-constraint-failed-user-profile-user-id
+https://stackoverflow.com/questions/49353692/django-unique-constraint-failed-site-coach-user-id
+
+
+

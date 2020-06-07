@@ -78,17 +78,25 @@ def post_blog(request):
     form = HomeForm(request.POST)
     rating = 'Error 404'
     context = {'form': rating}
-
+    try:
+        coach_instance = Post.objects.get(author=request.user)
+    except Post.DoesNotExist:
+        coach_instance = Post(author=request.user)
     # t=0
     if request.method == 'POST':
-        form = HomeForm(request.POST)
+        form = HomeForm(request.POST, instance = coach_instance)
         if form.is_valid():
             post = form.save(commit=False)
+
             post.author = request.user
             logger.error("anonymous................>>>>>>")
-            post.save()
-
             text = form.cleaned_data["post"]
+            # Post.objects.get_or_create(post=text)
+            # user_in = Post.objects.get(author=request.user)
+            user_cnf = Post.objects.create(author=request.user, post=text)
+            user_cnf.save()
+            form.save()
+
             # form = HomeForm()
             return redirect('blog')
             # post_ref = Post(post=text, author=request.user)
