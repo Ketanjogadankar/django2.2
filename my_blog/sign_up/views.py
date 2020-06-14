@@ -78,13 +78,13 @@ def post_blog(request):
     form = HomeForm(request.POST)
     rating = 'Error 404'
     context = {'form': rating}
-    try:
-        coach_instance = Post.objects.get(author=request.user)
-    except Post.DoesNotExist:
-        coach_instance = Post(author=request.user)
+    # try:
+    #     coach_instance = Post.objects.get(author=request.user)
+    # except Post.DoesNotExist:
+    #     coach_instance = Post(author=request.user)
     # t=0
     if request.method == 'POST':
-        form = HomeForm(request.POST, instance = coach_instance)
+        form = HomeForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
 
@@ -92,13 +92,13 @@ def post_blog(request):
             logger.error("anonymous................>>>>>>")
             text = form.cleaned_data["post"]
             # Post.objects.get_or_create(post=text)
-            # user_in = Post.objects.get(author=request.user)
             user_cnf = Post.objects.create(author=request.user, post=text)
-            user_cnf.save()
-            form.save()
+            user_cnf.save()                  #It can be use to save data send by user in DB
+            # form.save()                   #It can be use to save data send by user in DB
 
             # form = HomeForm()
-            return redirect('blog')
+            posts_obj = Post.objects.filter(author=request.user)
+            return render(request, 'testapp/home.html', {'post': posts_obj})
             # post_ref = Post(post=text, author=request.user)
             # post_ref.save()
         else:

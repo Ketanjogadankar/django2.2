@@ -18,13 +18,13 @@ from django.contrib.auth.models import AbstractUser
 
 class Post(models.Model):
 
-    # REQUIRED_FIELDS = ('user',)
+    # REQUIRED_FIELDS = ('post')
 
 
     post = models.CharField(max_length=500)
     # USERNAME_FIELD = 'post'
 
-    author = models.ForeignKey(User, on_delete=models.CASCADE, default=None)
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
     # user = models.ForeignKey(settings.AUTH_USER_MODEL,  on_delete=models.CASCADE,)
     # author = models.OneToOneField(User, default='', null=True, on_delete=models.CASCADE)
 
@@ -32,7 +32,7 @@ class Post(models.Model):
     # def post_save_receiver(sender, instance, created, **kwargs):
     #     pass
     #
-    # post_save.connect(post_save_receiver, sender=settings.AUTH_USER_MODEL)
+    # post_save.connect(Post, sender=settings.AUTH_USER_MODEL)
 
 
 

@@ -16,16 +16,25 @@ mumbai
     <button type="submit" class="btn btn-success btn-block" name="save">Submit</button>
 
 </form>
-<!--     <h1>ALL Blogs</h1><hr>    <br />-->
-<!--    {% if text %}-->
-<!--            <b> Blog is:</b>-->
-<!--                        <p>{{text}}</p>-->
-<!--    {%else%}-->
-<!--    <b>NO blogs found</b>-->
-<!--    {%endif%}-->
+     <h1>ALL Blogs</h1><hr>    <br />
+    {% if post %}
+            <b> Blog is:</b>
+                        <table>
+                         <tr>
+                        {% for po in post %}
+                        <td> BLOG = {{po.post}}</td>
+                        <td> AUTHOR = {{po.author}}</td>
+                         </tr>
+
+                        {%endfor%}
+                        </table>
 
 
-<!--    <h2>{{ text.post }}</h2>-->
+    {%else%}
+    <b>NO blogs found</b>
+    {%endif%}
+
+
 
 </body>
 </html>
