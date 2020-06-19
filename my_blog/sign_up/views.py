@@ -11,6 +11,8 @@ from django.http import HttpResponseRedirect
 from .forms import CreateUserForms, HomeForm   #Created mannually
 from .models import Post
 from django.urls import reverse
+from django.views.generic import View
+from django.core.exceptions import ObjectDoesNotExist
 
 
 logger = logging.getLogger(__name__)
@@ -30,13 +32,13 @@ def register_page(request):
                 form.save()
                 user = form.cleaned_data.get('username')
                 messages.success(request, 'Account created successfully for' + user)
-                return redirect('login')
+                return redirect('sign_up:login')
         context = {'form':form}
         return render(request,'testapp/registration.html',context)
 
 def login_page(request):
     if request.user.is_authenticated:    #User could not type user "localhost:/login/" & go to login page once he is logged in already
-        return redirect('blog')
+        return redirect('sign_up:blog')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
@@ -47,7 +49,7 @@ def login_page(request):
 
             if user is not None:
                 login(request, user)
-                return redirect('blog')
+                return redirect('sign_up:blog')
             else:
                 messages.info(request, 'Username or Password is incorrect')
 
@@ -64,7 +66,7 @@ def login_page(request):
 
 def logout_user(request):
     logout(request)
-    return redirect('login')
+    return redirect('sign_up:login')
 
 def get(request):
     form = HomeForm()
@@ -73,17 +75,25 @@ def get(request):
 
 # def article_detail()
 
-def post_blog(request):
-    global text
-    form = HomeForm(request.POST)
-    rating = 'Error 404'
-    context = {'form': rating}
+class Post_blog(View):
     # try:
     #     coach_instance = Post.objects.get(author=request.user)
     # except Post.DoesNotExist:
     #     coach_instance = Post(author=request.user)
     # t=0
-    if request.method == 'POST':
+    def get(self, request, *args, **kwargs):
+        form = HomeForm()
+        try:
+            posts_obj = Post.objects.filter(author=request.user)
+            context = {
+                'post': posts_obj,
+                'form': form
+                }
+            return render(request, 'testapp/home.html', context)
+        except ObjectDoesNotExist:
+            return render(request, 'testapp/home.html')
+
+    def post(self, request, *args, **kwargs):
         form = HomeForm(request.POST)
         if form.is_valid():
             post = form.save(commit=False)
@@ -97,17 +107,14 @@ def post_blog(request):
             # form.save()                   #It can be use to save data send by user in DB
 
             # form = HomeForm()
-            posts_obj = Post.objects.filter(author=request.user)
-            return render(request, 'testapp/home.html', {'post': posts_obj})
+            return redirect('sign_up:blog')
             # post_ref = Post(post=text, author=request.user)
             # post_ref.save()
         else:
             pass
 
         # args = {'form':form,'text':text}
-        return  render(request, 'testapp/home.html', {'form':form})
-    else:
-        return render(request, 'testapp/home.html',{'form':form})
+        return  redirect('sign_up:blog')
 
 
 

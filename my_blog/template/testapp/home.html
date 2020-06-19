@@ -7,12 +7,12 @@
 <body>
 mumbai
 <span>Hello, {{request.user}}</span>
-<span><a href="{% url 'logout' %}">Log Out</a></span>
-<form method="POST" action="{% url 'blog' %}" class="site-form">
+<span><a href="{% url 'sign_up:logout' %}">Log Out</a></span>
+<form method="POST" action="{% url 'sign_up:blog' %}" class="site-form">
     {% csrf_token %}
 <!--    {{form.as_p}}-->
 <!--    <input type="text" class="form-control" name="post" placeholder="Name">-->
-    {{ form }}
+    {{ form.post }}
     <button type="submit" class="btn btn-success btn-block" name="save">Submit</button>
 
 </form>

@@ -5,10 +5,11 @@ from sign_up.models import Post
 from django.contrib.auth.admin import UserAdmin
 
 
-class postAdmin(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     list_display = ['post','author']
+    search_field = ['author']
 
 
 
-admin.site.register(Post)
+admin.site.register(Post, PostAdmin)
 
